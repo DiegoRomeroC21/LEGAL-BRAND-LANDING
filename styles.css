@@ -1,0 +1,680 @@
+/* ==================================
+   RESET
+================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:var(--background);
+    color:var(--text);
+    line-height:1.6;
+    transition:.3s;
+
+    background-image:
+        radial-gradient(
+            circle at top right,
+            rgba(212,163,115,.12),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at bottom left,
+            rgba(163,177,138,.10),
+            transparent 30%
+        );
+}
+
+/* ==================================
+   THEME 1 - GIRLY PREMIUM (DEFAULT)
+================================== */
+
+:root{
+
+  --primary:#C77D9D;
+  --primary-dark:#A85D7E;
+  --primary-light:#E7C4D6;
+
+  --secondary:#7D335D;
+  --secondary-light:#B26A93;
+
+  --rose:#F4D5E2;
+
+  --surface-sage:#F8EEF3;
+  --surface-peach:#FFF1EA;
+
+  --background:#FAF7F4;
+  --surface:#FFFFFF;
+  --surface-alt:#F8EEF3;
+
+  --border:#E7D9E1;
+
+  --text:#2B2B2B;
+  --text-light:#6B6B6B;
+
+--success-hover: #06402b;
+
+   --glass-bg:
+        rgba(250, 247, 244, 0.450);
+
+}
+
+/* ==================================
+   THEME 2 - EXECUTIVE FEMININE
+================================== */
+
+body.executive{
+
+  /* Brand */
+  --primary: #D4A373;
+  --primary-light: #E9C9A7;
+  --primary-dark: #B88753;
+
+  /* Authority */
+  --secondary: #1A3C40;
+  --secondary-light: #3A6166;
+  --secondary-soft: #DCE6E7;
+
+  /* Accent Colors */
+  --sage: #A3B18A;
+  --peach: #EBC8B2;
+  --cream: #F4F1DE;
+  --rose: #DDB6C6;
+
+  /* Surfaces */
+  --background: #F4F1DE;
+  --surface: #FFFFFF;
+  --surface-alt: #FAF8EE;
+  --surface-sage: #EEF2E7;
+  --surface-peach: #FAEEE7;
+
+  /* Text */
+  --text: #1D1D1D;
+  --text-light: #5E5E5E;
+
+  --border: #D8CFB2;
+
+   --glass-bg:
+        rgba(244,241,222,.450);
+}
+
+/* ==================================
+   THEME 3 - LUXURY LEGAL
+================================== */
+
+body.luxury{
+
+  --primary:#B88A44;
+  --primary-dark:#9B7134;
+  --primary-light:#D7B47A;
+
+  --secondary:#23395B;
+  --secondary-light:#4A638A;
+
+  --rose:#E8DCC4;
+
+  --surface-sage:#F2F6FB;
+  --surface-peach:#FAF5EA;
+
+  --background:#FAF8F3;
+  --surface:#FFFFFF;
+  --surface-alt:#F5F1E8;
+
+  --border:#DDD2BD;
+
+  --text:#222222;
+  --text-light:#666666;
+
+      --glass-bg:
+        rgba(250,248,243,.450);
+}
+
+/* ==================================
+   GENERAL
+================================== */
+
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+}
+
+section{
+    padding:5rem 0;
+}
+
+h1,h2,h3{
+    color:var(--secondary);
+}
+
+h2{
+    text-align:center;
+    margin-bottom:2rem;
+}
+
+p{
+    color:var(--text);
+}
+
+/* ==================================
+   NAVBAR
+================================== */
+
+header{
+    position:sticky;
+    top:0;
+
+    background:var(--surface);
+
+    border-bottom:1px solid var(--border);
+
+    z-index:100;
+
+    transition:
+        background .3s ease,
+        backdrop-filter .3s ease,
+        box-shadow .3s ease,
+        border-color .3s ease;
+}
+
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:1rem 0;
+}
+
+.logo{
+    font-size:1.3rem;
+    font-weight:bold;
+
+    color:var(--secondary);
+}
+
+.desktop-nav{
+    display: block;
+}
+
+.menu-btn{
+    display:none;
+    border:none;
+    background:none;
+    color:var(--secondary);
+    font-size:2rem;
+    cursor:pointer;
+}
+
+.desktop-nav ul{
+    display:flex;
+
+    gap:2rem;
+
+    list-style:none;
+}
+
+.desktop-nav a{
+    text-decoration:none;
+
+    color:var(--text);
+
+    font-weight:600;
+
+    transition:.3s;
+}
+
+.desktop-nav a:hover{
+    color:var(--primary);
+}
+
+header.scrolled{
+
+    background:var(--glass-bg);
+
+    backdrop-filter:blur(16px);
+
+    -webkit-backdrop-filter:blur(16px);
+
+    border-bottom:1px solid rgba(255,255,255,.2);
+
+    box-shadow:
+        0 8px 30px rgba(0,0,0,.08);
+}
+
+
+#themeBtn{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+
+    background:var(--secondary);
+    color:white;
+
+    border:none;
+    border-radius:999px;
+
+    padding:.8rem 1.2rem;
+
+    cursor:pointer;
+
+    z-index:1000;
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,.15);
+}
+
+/* ==================================
+   BUTTONS
+================================== */
+
+.btn{
+    background:var(--primary);
+    color:white;
+    text-decoration:none;
+    padding:.9rem 1.5rem;
+    border-radius:999px;
+    transition:.3s;
+}
+
+.btn:hover{
+    opacity:.9;
+    transform:translateY(-2px);
+}
+
+.btn-whatsapp{
+    border:2px solid var(--primary);
+    color:var(--primary);
+    text-decoration:none;
+    padding:.9rem 1.5rem;
+    border-radius:999px;
+        transition:.3s;
+
+}
+
+
+.btn-whatsapp:hover{
+    background:var(--success-hover);
+    color:#F8F5EE;
+
+    border:2px solid var(--success-hover);
+
+    box-shadow:
+        0 8px 20px rgba(74,115,80,.25);
+    
+    transform:translateY(-2px);
+        transition:.3s;
+
+}
+
+/* ==================================
+   HERO
+================================== */
+
+.hero{
+    min-height:85vh;
+    display:flex;
+    align-items:center;
+}
+
+.hero-content{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:3rem;
+    align-items:center;
+}
+
+.badge{
+  background: var(--rose);
+  color: var(--secondary);
+}
+
+.card:nth-child(1){
+  background: var(--surface);
+}
+
+.card:nth-child(2){
+  background: var(--surface-sage);
+}
+
+.card:nth-child(3){
+  background: var(--surface-peach);
+}
+
+.hero h1{
+    font-size:clamp(2.5rem,6vw,4.5rem);
+    line-height:1.1;
+    margin-bottom:1rem;
+}
+
+.hero p{
+    font-size:1.1rem;
+    margin-bottom:2rem;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:1rem;
+}
+
+.hero-image{
+    background:var(--surface-alt);
+    border:2px dashed var(--border);
+    border-radius:20px;
+    height:400px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    color:var(--secondary);
+
+    font-size:4rem;
+    font-weight:bold;
+}
+
+
+
+/* ==================================
+   SERVICES
+================================== */
+
+.services{
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(250px,1fr));
+
+    gap:1.5rem;
+}
+
+.card{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:20px;
+    padding:2rem;
+
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+.card h3{
+    margin-bottom:1rem;
+}
+
+/* ==================================
+   PROCESS
+================================== */
+
+.steps{
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(200px,1fr));
+
+    gap:1rem;
+}
+
+.step{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:20px;
+    padding:2rem;
+    text-align:center;
+}
+
+.step span{
+    display:inline-flex;
+
+    width:50px;
+    height:50px;
+
+    justify-content:center;
+    align-items:center;
+
+    border-radius:50%;
+
+    background:var(--primary);
+    color:white;
+
+    margin-bottom:1rem;
+}
+
+/* ==================================
+   FAQ
+================================== */
+
+details{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:15px;
+    padding:1rem;
+    margin-bottom:1rem;
+}
+
+summary{
+    cursor:pointer;
+    font-weight:bold;
+    color:var(--secondary);
+}
+
+/* ==================================
+   CTA
+================================== */
+
+.cta{
+    text-align:center;
+    background:var(--surface);
+}
+
+.cta h2{
+    margin-bottom:2rem;
+}
+
+/* ==================================
+   FOOTER
+================================== */
+
+footer{
+    border-top:1px solid var(--border);
+    padding:2rem 0;
+    text-align:center;
+}
+
+/* ==================================
+   RESPONSIVE
+================================== */
+
+@media(max-width:768px){
+
+    *{
+            -webkit-tap-highlight-color: transparent;
+
+    }
+
+      .desktop-nav{
+        display:none;
+    }
+
+    .menu-btn{
+        display:block;
+    }
+
+    .hero{
+        min-height:auto;
+        padding:2rem 0;
+    }
+
+    .hero-content{
+        grid-template-columns:1fr;
+        gap:1.5rem;
+        padding-top: 5rem;
+    }
+
+    .hero h1{
+        font-size:3rem;
+        font-weight: bolder;
+    }
+
+    .hero-buttons{
+        display:flex;
+        flex-direction:row;
+        gap:.75rem;
+    }
+
+    .hero-buttons .btn,
+    .hero-buttons .btn-whatsapp{
+        flex:1;
+
+        text-align:center;
+
+        padding:.8rem;
+
+        font-size:.9rem;
+    }
+
+    .hero-image{
+        height:300px;
+        font-size:2rem;
+    }
+
+}
+
+
+
+/* ==================================
+   FULLSCREEN MENU
+================================== */
+
+.fullscreen-menu{
+
+    position:fixed;
+    inset:0;
+
+    display:flex;
+    flex-direction:column;
+
+    justify-content:center;
+    align-items:center;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.12),
+            rgba(255,255,255,.04)
+        ),
+        var(--glass-bg);
+
+    backdrop-filter:blur(24px);
+    -webkit-backdrop-filter:blur(24px);
+
+    opacity:0;
+    visibility:hidden;
+
+    transform:scale(1.03);
+
+    transition:
+        opacity .3s ease,
+        visibility .3s ease,
+        transform .3s ease;
+
+    z-index:9999;
+        -webkit-tap-highlight-color: transparent;
+
+}
+
+.fullscreen-menu.active{
+
+    opacity:1;
+    visibility:visible;
+
+    transform:scale(1);
+}
+
+/* ==========================
+   FULLSCREEN MENU INSIDE
+========================== */
+.fullscreen-menu ul{
+    list-style:none;
+    text-align:center;
+}
+
+.fullscreen-menu li{
+    margin:1.5rem 0;
+}
+
+.fullscreen-menu a{
+      text-decoration:none;
+
+    color:var(--secondary);
+
+    font-size:clamp(2rem,4vw,3rem);
+
+    font-weight:700;
+
+    transition:.25s ease;
+
+        -webkit-tap-highlight-color: transparent;
+
+}
+
+.fullscreen-menu a:hover{
+
+    color:var(--primary);
+
+    transform:translateY(-2px);
+
+        -webkit-tap-highlight-color: transparent;
+
+}
+
+.close-btn{
+
+    position:absolute;
+
+    top:30px;
+    right:30px;
+
+    width:50px;
+    height:50px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.15);
+
+    backdrop-filter:blur(10px);
+
+    color:var(--secondary);
+
+    font-size:1.5rem;
+
+    cursor:pointer;
+
+    transition:.25s ease;
+}
+
+.close-btn:hover{
+
+    background:rgba(255,255,255,.25);
+
+    transform:rotate(90deg);
+}
+
+.fullscreen-menu #themeBtn{
+    margin-top:2rem;
+    position:static;
+}
+
+body.menu-open{
+    overflow:hidden;
+}
